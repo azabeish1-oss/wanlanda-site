@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WANLANDA KG — Оптовая дистрибуция автотоваров</title>
+  <meta name="description" content="WANLANDA KG — надёжный оптовый поставщик автозапчастей, масел и автохимии по всему Кыргызстану." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    header {
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 100;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+    }
+    nav a {
+      margin: 0 14px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .btn {
+      background: #0b5ed7;
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .hero {
+      padding: 100px 0;
+      background: #f8f9fb;
+    }
+    .hero h1 {
+      font-size: 44px;
+      font-weight: 700;
+      max-width: 700px;
+    }
+    .hero p {
+      margin-top: 20px;
+      font-size: 18px;
+      max-width: 600px;
+      color: #444;
+    }
+    .hero-actions { margin-top: 30px; }
+
+    section { padding: 80px 0; }
+
+    .trust {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 24px;
+      text-align: center;
+    }
+
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+    .card {
+      border: 1px solid #eee;
+      padding: 24px;
+      border-radius: 8px;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 30px;
+    }
+    form input {
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    form button {
+      grid-column: span 2;
+      margin-top: 10px;
+    }
+
+    footer {
+      background: #111;
+      color: #fff;
+      padding: 60px 0;
+    }
+    footer a { color: #fff; }
+
+    @media(max-width: 768px) {
+      .two-col { grid-template-columns: 1fr; }
+      form { grid-template-columns: 1fr; }
+      .hero h1 { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+<script>
+const translations = {
+  ru: {
+    h1: "Надёжный оптовый поставщик автотоваров в Кыргызстане",
+    heroP: "Автозапчасти, фильтры, моторные масла и специальные жидкости от международных брендов",
+    brands: "Наши бренды",
+    products: "Ассортимент продукции",
+    why: "Почему WANLANDA KG",
+    geo: "География",
+    form: "Начните сотрудничество с WANLANDA KG"
+  },
+  kg: {
+    h1: "Кыргызстан боюнча авто товарлардын ишенимдүү дүң жеткирүүчүсү",
+    heroP: "Эл аралык бренддерден авто тетиктер, фильтрлер, мотор майлары жана атайын суюктуктар",
+    brands: "Биздин бренддер",
+    products: "Продукция ассортименти",
+    why: "Эмне үчүн WANLANDA KG",
+    geo: "География",
+    form: "WANLANDA KG менен кызматташууну баштаңыз"
+  },
+  en: {
+    h1: "Reliable wholesale supplier of automotive products in Kyrgyzstan",
+    heroP: "Auto parts, filters, engine oils and special fluids from international brands",
+    brands: "Our brands",
+    products: "Product range",
+    why: "Why WANLANDA KG",
+    geo: "Geography",
+    form: "Start cooperation with WANLANDA KG"
+  }
+};
+
+function setLang(lang) {
+  document.querySelector('[data-h1]').innerText = translations[lang].h1;
+  document.querySelector('[data-hero-p]').innerText = translations[lang].heroP;
+  document.querySelector('[data-brands]').innerText = translations[lang].brands;
+  document.querySelector('[data-products]').innerText = translations[lang].products;
+  document.querySelector('[data-why]').innerText = translations[lang].why;
+  document.querySelector('[data-geo]').innerText = translations[lang].geo;
+  document.querySelector('[data-form]').innerText = translations[lang].form;
+}
+</script>
+
+<header>
+  <div class="container header-inner">
+    <img src="logo-wanlanda.png" alt="WANLANDA KG" style="height:40px;">
+    <nav>
+      <a href="javascript:setLang('ru')">RU</a> |
+      <a href="javascript:setLang('kg')">KG</a> |
+      <a href="javascript:setLang('en')">EN</a>
+      <br>
+      <a href="#">Главная</a>
+      <a href="#">О компании</a>
+      <a href="#">Продукция</a>
+      <a href="#">Бренды</a>
+      <a href="#">Контакты</a>
+    </nav>
+    <div class="header-right">
+      <a href="https://wa.me/" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/" target="_blank">Instagram</a>
+      <a href="#form" class="btn">Оставить заявку</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1 data-h1>Надёжный оптовый поставщик автотоваров в Кыргызстане</h1>
+    <p data-hero-p>Автозапчасти, фильтры, моторные масла и специальные жидкости от международных брендов</p>
+    <div class="hero-actions">
+      <a href="#form" class="btn">Оставить заявку</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container trust">
+    <div>🚚 Оптовые поставки</div>
+    <div>🤝 B2B сотрудничество</div>
+    <div>📍 Вся территория Кыргызстана</div>
+    <div>🌍 Международные бренды</div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-brands>Наши бренды</h2>
+    <div class="brands">
+      <img src="brand-wanlanda.png" alt="WANLANDA" style="max-height:60px;">
+      <img src="brand-gsp.png" alt="GSP" style="max-height:60px;">
+      <img src="brand-opet.png" alt="OPET" style="max-height:60px;">
+      <img src="brand-exsol.png" alt="EXSOL" style="max-height:60px;">
+    </div>
+      <div>GSP</div>
+      <div>OPET</div>
+      <div>EXSOL</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2 data-products>Ассортимент продукции</h2>
+    <div class="products">
+      <div class="card">Автозапчасти</div>
+      <div class="card">Фильтры</div>
+      <div class="card">Моторные масла</div>
+      <div class="card">Специальные жидкости</div>
+      <div class="card">Аксессуары</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container two-col">
+    <div>
+      <h2 data-why>Почему WANLANDA KG</h2>
+      <ul>
+        <li>Опыт в B2B</li>
+        <li>Надёжные поставки</li>
+        <li>Партнёрский подход</li>
+        <li>Прозрачные условия</li>
+      </ul>
+    </div>
+    <div>
+      <h2 data-geo>География</h2>
+      <p>Работаем по всей территории Кыргызстана</p>
+    </div>
+  </div>
+</section>
+
+<section id="form">
+  <div class="container">
+    <h2 data-form>Начните сотрудничество с WANLANDA KG</h2>
+    <form onsubmit="sendForm(event)">
+      <input type="text" id="company" placeholder="Название компании" required>
+      <input type="text" id="name" placeholder="Контактное лицо" required>
+      <input type="tel" id="phone" placeholder="Телефон" required>
+      <input type="text" id="city" placeholder="Город" required>
+      <input type="text" id="interest" placeholder="Интересующий бренд / категория" required>
+      <button class="btn" type="submit">Отправить заявку</button>
+    </form>
+
+<script>
+function sendForm(e) {
+  e.preventDefault();
+  const company = document.getElementById('company').value;
+  const name = document.getElementById('name').value;
+  const phone = document.getElementById('phone').value;
+  const city = document.getElementById('city').value;
+  const interest = document.getElementById('interest').value;
+
+  const text = `Заявка с сайта WANLANDA KG%0A%0AКомпания: ${company}%0AКонтакт: ${name}%0AТелефон: ${phone}%0AГород: ${city}%0AИнтерес: ${interest}`;
+
+  window.open(`https://wa.me/996XXXXXXXXX?text=${text}`, '_blank');
+}
+</script>
+    <p style="margin-top:16px;">Или напишите нам в <a href="https://wa.me/" target="_blank"><strong>WhatsApp</strong></a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <strong>WANLANDA KG</strong><br><br>
+    <a href="https://wa.me/" target="_blank">WhatsApp</a> ·
+    <a href="https://instagram.com/" target="_blank">Instagram</a><br><br>
+    © WANLANDA KG
+  </div>
+</footer>
+
+</body>
+</html>
